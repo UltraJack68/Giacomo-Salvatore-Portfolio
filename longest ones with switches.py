@@ -14,27 +14,55 @@ Bolded numbers were flipped from 0 to 1. The longest subarray is underlined.
 
 
 
-class solution:
+"""class Solution:
     def longestOnes(self, nums: List[int], k: int) -> int:
         
-        cuurmax = 0
+        switches = 0
+        currmax = 0
+        j = k
         
         for lowerbound in range(len(nums)):
             upperbound = lowerbound + 1
-            
+            j = k
+            switches = 0
+
             if nums[lowerbound] == 0:
-                break
+                continue
             
-            while k > 0 and upperbound <= (len(nums) - 1):
+            while j > 0 and upperbound < (len(nums) - 1):
                 upperbound += 1
                 if nums[upperbound] == 0:
-                    k -= 1
-
-            while k > 0 and lowerbound > 0:
-                lowerbound -= 1
-                k -= 1
-                    
+                    j -= 1
+                    switches += 1
+            while j > 0 and lowerbound > 0:
+                    lowerbound -= 1
+                    j -= 1
+                    switches +=1    
+          
             if currmax < len(nums[lowerbound:upperbound]):
                 currmax = len(nums[lowerbound:upperbound])
 
-        return currmax
+        return currmax"""
+    
+""" while j > 0 and lowerbound > 0:
+lowerbound -= 1
+j -= 1
+switches +=1"""
+
+class Solution:
+    def longestOnes(self, nums: List[int], k: int) -> int:
+        left = 0
+        max_len = 0
+
+        for right in range(len(nums)):
+            if nums[right] == 0:
+                k -= 1
+
+            while k < 0:
+                if nums[left] == 0:
+                    k += 1
+                left += 1
+
+            max_len = max(max_len, right - left + 1)
+
+        return max_len
