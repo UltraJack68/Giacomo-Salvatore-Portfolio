@@ -10,6 +10,17 @@ For example, the average of four elements 2, 3, 1, and 5 is (2 + 3 + 1 + 5) / 4 
 
 class Solution:
     def getAverages(self, nums: List[int], k: int) -> List[int]:
-        prefix = 
-
+        newarray = []
+        prefix = [nums[0]]
         
+        for index in range(len(nums)):
+            prefix.append(nums[index]+prefix[len(prefix)-1])
+        
+        for index in range(len(nums)):
+            if index < k or index > (len(nums) - 1 - k):
+                newarray.append(-1)
+            
+            else:
+                newarray.append((prefix[index + k + 1] - prefix[index - k])//(2 * k + 1))
+        
+        return newarray
