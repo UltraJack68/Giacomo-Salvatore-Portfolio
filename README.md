@@ -1,3 +1,3 @@
 # Algorythms-Data-Structures
-This is a private collection of code which focuses on, as pointed out from the title, on Algorythms and data structures.
-Most codes will probably be answers to exercises.
+This is a private collection of code focused, as the title suggests, on algorithms and data structures.
+Most of the pieces codes will probably be answers to Leet Code's exercises.
