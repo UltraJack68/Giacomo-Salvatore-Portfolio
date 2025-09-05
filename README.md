@@ -1,3 +1,2 @@
 # Algorythms-Data-Structures
-This is a private collection of code focused, as the title suggests, on algorithms and data structures.
-Most of the scripts will probably be answers to Leet Code exercises.
+This repository is a collection of Data Structures and Algorithms (DSA) exercises, primarily sourced from LeetCode and other competitive programming platforms. The goal of this repository is to provide a structured reference for solving algorithmic challenges while improving problem-solving skills and coding efficiency.
